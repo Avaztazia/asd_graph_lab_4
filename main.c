@@ -289,13 +289,14 @@ void drawGraph ( HDC hdc, double** matrix )
 
                                 }
                                 else {
+                                    LineTo( hdc, nx[j], ny[j] );
                                     //S..t starts here:
                                     if ( matrix[j][i] ) {
 
                                         if ( i - j < 0 ) {
                                             pt[1].x = nx[i] + 20;
                                             pt[1].y = ny[i] - oneLen;
-                                            LineTo( hdc, nx[j], ny[j] );
+
                                             arrow(70,nx[j]-8,ny[j]+dy);
                                             Polyline(hdc,pt,3);
                                             arrow(-100,nx[i]+1,ny[i]-dy);
@@ -353,7 +354,6 @@ void drawGraph ( HDC hdc, double** matrix )
                                             }
 
                                         }
-                                        LineTo( hdc, nx[j], ny[j] );
                                     }
                                 }
                             }
